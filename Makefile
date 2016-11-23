@@ -1,11 +1,12 @@
 CC=gcc
 CFLAGS=-I.
-DEPS = parcoursGraphe.h all.h
-OBJ = parcoursGraphe.o
+DEPS = generateDIMACS.h all.h
+OBJ = generateDIMACS.o
 GRAPHS = 10K2 kneser72 kneser73 kneser62 kneser83 m47 m95 petersen sierp3 C10 ep chvatal golomb moser hypercube8
 ODIR=obj
-%.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+
+# %.o: %.c $(DEPS)
+# 	$(CC) -c -o $@ $< $(CFLAGS)
 
 all : $(GRAPHS)
 
