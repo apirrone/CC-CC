@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-I.
 DEPS = parcoursGraphe.h all.h
 OBJ = parcoursGraphe.o
-GRAPHS = 10K2 kneser72 kneser73 kneser62 kneser83 m47 m95 petersen sierp3
+GRAPHS = 10K2 kneser72 kneser73 kneser62 kneser83 m47 m95 petersen sierp3 C10 ep chvatal golomb moser hypercube8
 ODIR=obj
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
@@ -42,6 +42,24 @@ petersen : $(OBJ) petersen.o
 
 
 sierp3 : $(OBJ) sierp3.o
+	gcc -o $@ $^ $(CFLAGS)
+
+C10 : $(OBJ) C10.o
+	gcc -o $@ $^ $(CFLAGS)
+
+ep : $(OBJ) ep.o
+	gcc -o $@ $^ $(CFLAGS)
+
+chvatal : $(OBJ) chvatal.o
+	gcc -o $@ $^ $(CFLAGS)
+
+golomb : $(OBJ) golomb.o
+	gcc -o $@ $^ $(CFLAGS)
+
+moser : $(OBJ) moser.o
+	gcc -o $@ $^ $(CFLAGS)
+
+hypercube8 : $(OBJ) hypercube8.o
 	gcc -o $@ $^ $(CFLAGS)
 
 .PHONY : clean
